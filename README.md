@@ -24,6 +24,10 @@ In **terraform.tfvars** or **example.tfvars**:
 
 **cloudfront_price_class** - (Required) Price class provides you an option to lower the prices you pay to deliver content out of Amazon CloudFront.
 
+**domain_name** - (Optional) Provide domain name to bind on CloudFront.
+
+**certificate_arn** - (Optional) The ARN of the AWS Certificate Manager certificate that you wish to use with this distribution. The ACM certificate must be in US-EAST-1.
+
 ## Usage
 
 ### Terraform Installation

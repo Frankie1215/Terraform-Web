@@ -13,3 +13,13 @@ variable "s3_bucket" {
 variable "cloudfront_price_class" {
   type = string
 }
+
+variable "domain_name" {
+  type    = string
+  default = ""
+}
+
+variable "certificate_arn" {
+  type    = string
+  default = ""
+}

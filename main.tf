@@ -47,6 +47,8 @@ resource "aws_s3_bucket_policy" "web" {
 }
 
 resource "aws_cloudfront_distribution" "web" {
+  aliases = var.domain_name != "" ? [var.domain_name] : null
+
   origin {
     domain_name = aws_s3_bucket.web.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
@@ -84,11 +86,10 @@ resource "aws_cloudfront_distribution" "web" {
     }
   }
 
-  tags = {
-    ENV = "production"
-  }
-
   viewer_certificate {
+    acm_certificate_arn = var.certificate_arn != "" ? var.certificate_arn : null
     cloudfront_default_certificate = true
+    ssl_support_method = var.certificate_arn != "" ? "sni-only" : null
+    minimum_protocol_version = "TLSv1.2_2019"
   }
 }
