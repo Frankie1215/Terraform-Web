@@ -4,9 +4,13 @@ Run Terraform to deploy AWS service(s).  Use [CloudFront](https://aws.amazon.com
 
 [Certificate Manager](https://aws.amazon.com/certificate-manager/) is optional for SSL.
 
-Structure like below:
+## Structure
+
 ![Alt text](structure.png)
 
+## Provider in Terraform Registry
+
+[AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 
 ## Environment variables
 
